@@ -1,0 +1,27 @@
+[1/10] cmd.exe /C "cd /D E:\Weather-Station\build && C:\Espressif\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.0.1/components/spiffs/spiffsgen.py 0x20000 E:/Weather-Station/font E:/Weather-Station/build/storage0.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len"
+[2/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D E:\Weather-Station\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 E:/Weather-Station/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[3/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.c.obj
+E:/Weather-Station/main/app_main.c: In function 'ILI9341':
+E:/Weather-Station/main/app_main.c:198:38: warning: unused variable 'string_temp' [-Wunused-variable]
+  198 |                                 char string_temp[20];
+      |                                      ^~~~~~~~~~~
+At top level:
+E:/Weather-Station/main/app_main.c:173:13: warning: 'Text_Display' defined but not used [-Wunused-function]
+  173 | static void Text_Display(TFT_t *dev, FontxFile *fx, int x, int y,
+      |             ^~~~~~~~~~~~
+E:/Weather-Station/main/app_main.c:152:13: warning: 'CHANGE_Value_DS3231' defined but not used [-Wunused-function]
+  152 | static void CHANGE_Value_DS3231(uint8_t value, char *ascii, data_change_ds3231_t type)
+      |             ^~~~~~~~~~~~~~~~~~~
+[4/8] Linking C static library esp-idf\main\libmain.a
+[5/8] Generating ld/sections.ld
+[6/8] Linking CXX executable Weather-Station.elf
+[7/8] Generating binary image from built executable
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 25 ELF sections
+Successfully created esp32 image.
+Generated E:/Weather-Station/build/Weather-Station.bin
+[8/8] cmd.exe /C "cd /D E:\Weather-Station\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app E:/Weather-Station/build/partition_table/partition-table.bin E:/Weather-Station/build/Weather-Station.bin"
+Weather-Station.bin binary size 0xc7a70 bytes. Smallest app partition is 0x100000 bytes. 0x38590 bytes (22%) free.
